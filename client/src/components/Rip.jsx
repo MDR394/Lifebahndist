@@ -153,7 +153,7 @@ function Rip() {
               </div>
               <div className="card-body">
                 <p>
-                  <strong>Date of Birth:</strong>{" "}
+                  <strong>Date of Birth:</strong>
                   {post?.dateOfBirth
                     ? formatDate(post.dateOfBirth)
                     : "Loading..."}
@@ -162,7 +162,7 @@ function Rip() {
                   <strong>Birth Place:</strong> {post?.birthPlace}
                 </p>
                 <p>
-                  <strong>Death:</strong>{" "}
+                  <strong>Death:</strong>
                   {post?.deathDate ? formatDate(post.deathDate) : "Loading..."}
                 </p>
                 <p>
@@ -214,10 +214,10 @@ function Rip() {
         </Modal>
         <button className="say_a_prayer">Say A Prayer</button>
       </div>
-      <div className="test">
-        <div className="flowers_section">
+      <div className="container">
+        <div className="row gap-3">
           {flowersData.map((flower) => (
-            <div key={flower?.id} className="flower_card">
+            <div key={flower?.id} className="flower_card container-md-3">
               <img src={flower?.flowerImg} alt="Flower" />
               <div className="flower_card_text">
                 <h5>Left By: {flower?.name}</h5>
