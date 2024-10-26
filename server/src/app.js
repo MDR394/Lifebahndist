@@ -3,7 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 const app = express();
-// app.use(express.static("dist"));
+app.use(express.static("dist"));
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
@@ -27,8 +27,8 @@ app.use("/api/v1/posts", postRouter);
 app.use("/api/v1/flowers", flowerRouter);
 app.use("/api/v1/prayers", prayerRouter);
 // http://localhost:300/api/v1/users/register
-app.get("/", (req, res) => {
-  res.send("Hello, World!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello, World!");
+// });
 
 export { app };
