@@ -115,7 +115,7 @@ function PostList() {
     const fetchData = async () => {
       setFetching(true);
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/posts", {
+        const response = await axios.get("api/v1/posts", {
           headers: {
             Authorization: `Bearer ${currentUser?.data.accessToken}`, // Use access token
           },
@@ -141,7 +141,7 @@ function PostList() {
   const becomeSponsor = async () => {
     try {
       const response = await axios.patch(
-        "http://localhost:3000/api/v1/users/become-sponsor",
+        "api/v1/users/become-sponsor",
         {},
         {
           headers: {

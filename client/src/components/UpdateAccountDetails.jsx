@@ -27,7 +27,7 @@ const UpdateAccountDetails = () => {
     // console.log(currentUser.id);
     try {
       const res = await axios.patch(
-        `http://localhost:3000/api/v1/users/update-account`,
+        `api/v1/users/update-account`,
         updatedUser, // Send the merged user data
         {
           headers: {

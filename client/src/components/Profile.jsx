@@ -21,7 +21,7 @@ const Profile = () => {
       setFetching(true);
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/v1/posts/${currentUser.data.user._id}`,
+          `api/v1/posts/${currentUser.data.user._id}`,
           {
             headers: {
               Authorization: `Bearer ${currentUser?.data.accessToken}`, // Use access token
@@ -45,7 +45,7 @@ const Profile = () => {
 
   const handleDelete = async (postId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/v1/posts/${postId}`, {
+      await axios.delete(`api/v1/posts/${postId}`, {
         headers: {
           Authorization: `Bearer ${currentUser?.data.accessToken}`,
         },
@@ -80,7 +80,7 @@ const Profile = () => {
 
     try {
       const postRes = await axios.patch(
-        `http://localhost:3000/api/v1/posts/${selectedPost._id}`,
+        `api/v1/posts/${selectedPost._id}`,
         formData,
         {
           headers: {

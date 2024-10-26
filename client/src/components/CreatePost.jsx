@@ -57,15 +57,11 @@ const CreatePost = () => {
     data.append("postImg", formData.postImg);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/posts",
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${currentUser?.data.accessToken}`, // Use access token
-          },
-        }
-      );
+      const response = await axios.post("api/v1/posts", data, {
+        headers: {
+          Authorization: `Bearer ${currentUser?.data.accessToken}`, // Use access token
+        },
+      });
       // console.log(response.data);
       alert("Post Created Successfully");
 

@@ -42,15 +42,11 @@ const SignUp = () => {
     // data.append("coverImage", formData.coverImage);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/users/register",
-        data,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("api/v1/users/register", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       // console.log(response.data);
       alert("User Registered Successfully");
 

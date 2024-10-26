@@ -38,16 +38,12 @@ const AddFlower = () => {
     data.append("flowerImg", formData.flowerImg);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/flowers",
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${currentUser?.data.accessToken}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("api/v1/flowers", data, {
+        headers: {
+          Authorization: `Bearer ${currentUser?.data.accessToken}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
       alert("Flower Created Successfully");
 
       // Navigate to another route if necessary

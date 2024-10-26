@@ -21,7 +21,7 @@ const UpdatePost = () => {
     try {
       if (title || description || postImg[0]) {
         const postRes = await axios.put(
-          `http://localhost:3000/api/v1/posts/${selectedPost._id}`,
+          `api/v1/posts/${selectedPost._id}`,
           formData,
           {
             headers: {

@@ -30,16 +30,12 @@ const AddFlower = () => {
     data.append("prayerText", formData.prayerText);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/prayers",
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${currentUser?.data.accessToken}`,
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post("api/v1/prayers", data, {
+        headers: {
+          Authorization: `Bearer ${currentUser?.data.accessToken}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
       alert("Prayer Created Successfully");
 
       // Navigate to another route if necessary
